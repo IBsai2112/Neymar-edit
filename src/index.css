@@ -8,7 +8,11 @@
   font-family: font2;
   src: url(../public/fonts/Lausanne-500.woff2);
 }
-
+/* 
 body {
   background-color: #111;
-}
+} */
+ body{
+  overflow-x: hidden;
+  background-color: #111;
+ }
