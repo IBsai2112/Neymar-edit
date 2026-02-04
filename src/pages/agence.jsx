@@ -45,6 +45,13 @@ const agence = () => {
         start:"top 21%",
         end:"top -90%",
         pin:true,
+        pinSpacing:true,
+        pinReparent:true,
+        pinType:"transform",
+        scrub:1,
+        anticipatePin:1,
+        invalidateOnRefresh:true,
+      
         onUpdate:(elem)=>{
           let imagesIndex;
 
@@ -62,8 +69,8 @@ const agence = () => {
 
   return (
    <div>
-    <div className='section1 '>
-    <div ref={imageDivRef} className='absolute h-[33vw] overflow-hidden w-[25vw] rounded-2xl top-10 left-[22vw]'>
+    <div className='section1 relative py-1'>
+    <div ref={imageDivRef} className='absolute h-[33vw] overflow-hidden w-[25vw] rounded-2xl top-0 left-[22vw]'>
       <img ref={imageRef} className='w-full h-full object-cover' src="/public/4-ney.jpeg" alt="Neymar Jr"/>
     </div>
      <div className='relative font-[font2]'>
