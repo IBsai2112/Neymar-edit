@@ -1,9 +1,36 @@
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 import React from 'react'
 
 const fullScreenNav = () => {
+    const stairParentRef = useRef(null)
+
+      useGSAP(function(){
+
+    const tl = gsap.timeline()
+    
+    tl.from('.stair',{
+      height:0,
+      // duration:1,
+      stagger:{
+        amount:-0.3}
+    })
+   
+
+  }, )
+
   return (
     <div id='fullScreenNav' className='text-white overflow-x-hidden absolute w-full h-screen'>
-        <div>
+        <div ref={stairParentRef} className='h-screen w-full fixed'>
+            <div className='flex h-full w-full'>
+        <div className='stair h-full w-1/5 bg-black'> </div>
+        <div className='stair h-full w-1/5 bg-black'> </div>
+        <div className='stair h-full w-1/5 bg-white'> </div>
+        <div className='stair h-full w-1/5 bg-black'> </div>
+        <div className='stair h-full w-1/5 bg-black'> </div>
+      </div>
+        </div>
+        <div className='relative'>
             <div className='flex w-full justify-between items-start'>
             <div className='p-2'>
             <div className='w-30'>
@@ -88,15 +115,6 @@ const fullScreenNav = () => {
                 </div>
             </div>
         </div>
-        </div>
-        <div className='h-screen fixed '>
-            <div className='flex h-full w-full'>
-        <div className='stair h-full w-1/5 bg-black'> </div>
-        <div className='stair h-full w-1/5 bg-black'> </div>
-        <div className='stair h-full w-1/5 bg-black'> </div>
-        <div className='stair h-full w-1/5 bg-black'> </div>
-        <div className='stair h-full w-1/5 bg-black'> </div>
-      </div>
         </div>
     </div>
   )
