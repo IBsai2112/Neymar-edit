@@ -18,11 +18,11 @@ const App = () => {
       
      <Navbar/>
      <FullScreenNav/>
-      <Routes>  
+      {/* <Routes>  
         <Route path="/" element={<Home/>}/> 
         <Route path= "/agence" element={<Agence/>}/>
         <Route path= "/Projects" element={<Projects/>}/>
-      </Routes>
+      </Routes> */}
     </div>
   )
 }
