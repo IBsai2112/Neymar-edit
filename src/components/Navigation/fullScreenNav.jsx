@@ -1,36 +1,44 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import React from 'react'
+import React, { useRef } from 'react'
 
-const fullScreenNav = () => {
-    const stairParentRef = useRef(null)
+const FullScreenNav = () => {
+    // const stairingParentRef = useRef(null)
+    const fullNavLink = useRef(null)
 
-      useGSAP(function(){
+     useGSAP(() => {
+  const tl = gsap.timeline()
 
-    const tl = gsap.timeline()
+  tl.from('.stairing', {
+    height: 0,
+    stagger: {
+      amount: -0.3
+    }
     
-    tl.from('.stair',{
-      height:0,
-      // duration:1,
-      stagger:{
-        amount:-0.3}
+  })
+  tl.from(fullNavLink.current, {
+        opacity: 0
     })
-   
-
-  }, )
+  tl.from('.link', {
+        opacity: 0,
+        y: 20,
+        rotateX: 90,
+        stagger: 0.2
+    })
+}, )
 
   return (
     <div id='fullScreenNav' className='text-white overflow-x-hidden absolute w-full h-screen'>
-        <div ref={stairParentRef} className='h-screen w-full fixed'>
+        <div className='h-screen w-full fixed'>
             <div className='flex h-full w-full'>
-        <div className='stair h-full w-1/5 bg-black'> </div>
-        <div className='stair h-full w-1/5 bg-black'> </div>
-        <div className='stair h-full w-1/5 bg-white'> </div>
-        <div className='stair h-full w-1/5 bg-black'> </div>
-        <div className='stair h-full w-1/5 bg-black'> </div>
+        <div className='stairing h-full w-1/5 bg-red-900'> </div>
+        <div className='stairing h-full w-1/5 bg-red-900'> </div>
+        <div className='stairing h-full w-1/5 bg-red-900'> </div>
+        <div className='stairing h-full w-1/5 bg-red-900'> </div>
+        <div className='stairing h-full w-1/5 bg-red-900'> </div>
       </div>
         </div>
-        <div className='relative'>
+        <div ref={fullNavLink} className='relative'>
             <div className='flex w-full justify-between items-start'>
             <div className='p-2'>
             <div className='w-30'>
@@ -46,7 +54,7 @@ const fullScreenNav = () => {
           </div>
         </div>
         <div id='all-links' className='py-30'>
-            <div className='link relative border-t-1 border-white'>
+            <div className='link origin-top relative border-t-1 border-white'>
                 <h1 className='font-[font2] text-[8vw] text-center leading-[0.8] pt-5.5 uppercase'>Projects</h1>
                 <div className='moveLink absolute flex top-0 bg-[#fddf0b] text-black'>
                     <div className='movex flex items-center '>
@@ -60,10 +68,10 @@ const fullScreenNav = () => {
                     <img className='h-23 w-62 shrink-0 object-cover' src="../4-ney.jpeg" alt="" />
                     <h2 className='whitespace-nowrap font-[font2] text-[8vw] text-center leading-[0.8] pt-5.5 uppercase'>football legend</h2>
                     <img className='h-23 w-62 shrink-0 object-cover' src="../assets/19Ney.jpeg" alt="" />
-                </div>movex 
+                </div>
                 </div>
             </div>
-            <div className='link relative border-t-1 border-white'>
+            <div className='link origin-top relative border-t-1 border-white'>
                 <h1 className='font-[font2] text-[8vw] text-center leading-[0.8] pt-5.5 uppercase'>Projects</h1>
                 <div className='moveLink absolute flex top-0 bg-[#fddf0b] text-black'>
                     <div className='movex flex items-center '>
@@ -77,10 +85,10 @@ const fullScreenNav = () => {
                     <img className='h-23 w-62 shrink-0 object-cover' src="../4-ney.jpeg" alt="" />
                     <h2 className='whitespace-nowrap font-[font2] text-[8vw] text-center leading-[0.8] pt-5.5 uppercase'>football legend</h2>
                     <img className='h-23 w-62 shrink-0 object-cover' src="../assets/19Ney.jpeg" alt="" />
-                </div>movex 
+                </div>
                 </div>
             </div>
-            <div className='link relative border-t-1 border-white'>
+            <div className='link origin-top relative border-t-1 border-white'>
                 <h1 className='font-[font2] text-[8vw] text-center leading-[0.8] pt-5.5 uppercase'>Projects</h1>
                 <div className='moveLink absolute flex top-0 bg-[#fddf0b] text-black'>
                     <div className='movex flex items-center '>
@@ -94,10 +102,10 @@ const fullScreenNav = () => {
                     <img className='h-23 w-62 shrink-0 object-cover' src="../4-ney.jpeg" alt="" />
                     <h2 className='whitespace-nowrap font-[font2] text-[8vw] text-center leading-[0.8] pt-5.5 uppercase'>football legend</h2>
                     <img className='h-23 w-62 shrink-0 object-cover' src="../assets/19Ney.jpeg" alt="" />
-                </div>movex 
+                </div>
                 </div>
             </div>
-            <div className='link relative border-y-1 border-white'>
+            <div className='link origin-top relative border-y-1 border-white'>
                 <h1 className='font-[font2] text-[8vw] text-center leading-[0.8] pt-5.5 uppercase'>Projects</h1>
                 <div className='moveLink absolute flex top-0 bg-[#fddf0b] text-black'>
                     <div className='movex flex items-center '>
@@ -111,7 +119,7 @@ const fullScreenNav = () => {
                     <img className='h-23 w-62 shrink-0 object-cover' src="../4-ney.jpeg" alt="" />
                     <h2 className='whitespace-nowrap font-[font2] text-[8vw] text-center leading-[0.8] pt-5.5 uppercase'>football legend</h2>
                     <img className='h-23 w-62 shrink-0 object-cover' src="../assets/19Ney.jpeg" alt="" />
-                </div>movex 
+                </div>
                 </div>
             </div>
         </div>
@@ -120,4 +128,4 @@ const fullScreenNav = () => {
   )
 }
 
-export default fullScreenNav
+export default FullScreenNav
