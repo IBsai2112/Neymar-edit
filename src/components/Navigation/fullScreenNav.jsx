@@ -1,10 +1,13 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import React, { useRef } from 'react'
+import React, { useContext, useRef } from 'react'
+import {navbarcontext} from '../../context/navContext'
 
 const FullScreenNav = () => {
     // const stairingParentRef = useRef(null)
     const fullNavLink = useRef(null)
+
+    const navContext = useContext(navbarcontext)
 
      useGSAP(() => {
   const tl = gsap.timeline()
@@ -28,7 +31,7 @@ const FullScreenNav = () => {
 }, )
 
   return (
-    <div id='fullScreenNav' className='text-white overflow-x-hidden absolute w-full h-screen'>
+    <div id='fullScreenNav' className='hidden text-white overflow-x-hidden absolute w-full h-screen'>
         <div className='h-screen w-full fixed'>
             <div className='flex h-full w-full'>
         <div className='stairing h-full w-1/5 bg-red-900'> </div>

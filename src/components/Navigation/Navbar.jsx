@@ -21,7 +21,9 @@ const Navbar = () => {
             navGreenRaf.current.style.height = '0%';
         }}
         className='bg-black relative h-15 w-90'>
-            <div className='relative'>
+            <div className='relative h-full px-18 flex flex-col justify-center items-end gap-2'>
+                <div className='w-20 h-0.5 bg-white'></div>
+                <div className='w-13 h-0.5 bg-white'></div>
         </div>
         <div ref={navGreenRaf} className='bg-green-500 transition-all duration-300 absolute top-0 h-0 w-full'>
 
